@@ -1,6 +1,6 @@
 {
   "name": "angular-business-hours",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": false,
   "engines": {
     "node": "4.2.2"
