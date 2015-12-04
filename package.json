@@ -1,7 +1,13 @@
 {
   "name": "angular-business-hours",
   "version": "0.8.1",
+  "description": "Let you specify hours for your business place",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:extendi/angular-business-hours.git"
+  },
+  "license": "MIT",
   "engines": {
     "node": "4.2.2"
   },

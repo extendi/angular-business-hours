@@ -14,10 +14,6 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/extendi/angular-business-hours",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:extendi/angular-business-hours.git"
-  },
   "ignore": [
     "**/.*",
     "node_modules",
