@@ -11,7 +11,8 @@ angular.module("extendi.business-hours", ['pascalprecht.translate']).config([
       "business-hours.weekend": "Fine settimana",
       "business-hours.alldays": "Tutti i giorni"
     });
-    return $translateProvider.preferredLanguage('it');
+    $translateProvider.preferredLanguage('it');
+    return $translateProvider.useSanitizeValueStrategy('escapeParameters');
   }
 ]).directive('businessHours', function() {
   return {
