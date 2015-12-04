@@ -5,7 +5,7 @@
     "Matteo Alessani <alessani@gmail.com>"
   ],
   "description": "Let you specify hours for your business place",
-  "main": "directive.js",
+  "main": "./dist/angular-business-hours.js",
   "moduleType": [],
   "keywords": [
     "hours",
@@ -13,7 +13,11 @@
     "angular"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/extendi/angular-business-hours",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:extendi/angular-business-hours.git"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
