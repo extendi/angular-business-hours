@@ -6,11 +6,13 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
       "business-hours.weekdays": "Week days"
       "business-hours.weekend": "Weekend"
       "business-hours.alldays": "All days"
+      "business-hours.add_opening": "Add opening hour"
     )
     $translateProvider.translations('it',
       "business-hours.weekdays": "Giorni feriali"
       "business-hours.weekend": "Fine settimana"
       "business-hours.alldays": "Tutti i giorni"
+      "business-hours.add_opening": "Aggiungi orari di apertura"
     )
     $translateProvider.preferredLanguage('it')
     $translateProvider.useSanitizeValueStrategy('escapeParameters')
