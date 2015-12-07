@@ -7,12 +7,14 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
       "business-hours.weekend": "Weekend"
       "business-hours.alldays": "All days"
       "business-hours.add_opening": "Add opening hour"
+      "business-hours.choose_day": "Choose a day"
     )
     $translateProvider.translations('it',
       "business-hours.weekdays": "Giorni feriali"
       "business-hours.weekend": "Fine settimana"
       "business-hours.alldays": "Tutti i giorni"
       "business-hours.add_opening": "Aggiungi orari di apertura"
+      "business-hours.choose_day": "Scegli un giorno"
     )
     $translateProvider.preferredLanguage('it')
     $translateProvider.useSanitizeValueStrategy('escapeParameters')
@@ -74,7 +76,7 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
         return "business-hours.alldays" if _.xor(days, $scope.days).length == 0
         return _.map(days, (day) -> 
           ($scope.days_label[day])[0..2]).join(",") if days.length > 0
-        return "Scegli un giorno"
+        return "business-hours.choose_day"
       
       $scope.add_hour = ->
         value = if $scope.model.length > 0
