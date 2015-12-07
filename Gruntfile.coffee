@@ -14,6 +14,13 @@ module.exports = (grunt) ->
         dest: 'dist'
         ext: ".js"
 
+    ngtemplates:
+      app:
+        src: "src/**/*.html"
+        dest: "dist/angular-business-hours.tpl.js"
+
   #Load Tasks
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-angular-templates'
+  
   grunt.registerTask 'compile', ['coffee']

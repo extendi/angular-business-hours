@@ -1,11 +1,11 @@
 {
   "name": "angular-business-hours",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "authors": [
     "Matteo Alessani <alessani@gmail.com>"
   ],
   "description": "Let you specify hours for your business place",
-  "main": "./dist/angular-business-hours.js",
+  "main": ["./dist/angular-business-hours.js", "./dist/angular-business-hours.tpl.js"],
   "moduleType": [],
   "keywords": [
     "hours",

@@ -1,6 +1,6 @@
 {
   "name": "angular-business-hours",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Let you specify hours for your business place",
   "private": false,
   "repository": {
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
+    "grunt-angular-templates": "^0.5.9",
     "grunt-contrib-coffee": "~0.13.0"
   }
 }

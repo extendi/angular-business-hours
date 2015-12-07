@@ -1,0 +1,3 @@
+<div ng-repeat="day in days">
+  <span ng-show="hours_for(model, day).length"><span class="size-sm ly-inline-block">{{days_label[day]}}</span> <span class="push-left" ng-repeat="hour in hours_for(model, day)">{{hour.start}} &ndash; {{hour.end}}</span></span>
+</div>
