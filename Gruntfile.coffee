@@ -16,7 +16,10 @@ module.exports = (grunt) ->
 
     ngtemplates:
       app:
-        src: "src/**/*.html"
+        options:
+          module: "extendi.business-hours.tpl"
+          standalone: true
+        src: "templates/*.html"
         dest: "dist/angular-business-hours.tpl.js"
 
   #Load Tasks

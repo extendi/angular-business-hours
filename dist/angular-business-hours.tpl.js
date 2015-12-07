@@ -1,14 +1,14 @@
-angular.module('app').run(['$templateCache', function($templateCache) {
+angular.module('extendi.business-hours.tpl', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('src/partials/templates/hours.html',
+  $templateCache.put('templates/hours.html',
     "<div ng-repeat=\"day in days\">\n" +
     "  <span ng-show=\"hours_for(model, day).length\"><span class=\"size-sm ly-inline-block\">{{days_label[day]}}</span> <span class=\"push-left\" ng-repeat=\"hour in hours_for(model, day)\">{{hour.start}} &ndash; {{hour.end}}</span></span>\n" +
     "</div>"
   );
 
 
-  $templateCache.put('src/partials/templates/hours_input.html',
+  $templateCache.put('templates/hours_input.html',
     "<div ng-repeat=\"hour in model\" class=\"push-small-bottom form-inline\">\n" +
     "  <a ng-click=\"remove_hour($index)\" class=\"close push-xsmall-top\"><i class=\"fa fa-times-circle text-md\"></i></a>\n" +
     "  \n" +

@@ -1,5 +1,5 @@
 'use strict';
-angular.module("extendi.business-hours", ['pascalprecht.translate']).config([
+angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.business-hours.tpl']).config([
   '$translateProvider', function($translateProvider) {
     $translateProvider.translations('en', {
       "business-hours.weekdays": "Week days",
@@ -21,7 +21,7 @@ angular.module("extendi.business-hours", ['pascalprecht.translate']).config([
       model: "="
     },
     controller: "BusinessHoursCtrl",
-    templateUrl: "src/partials/templates/hours.html"
+    templateUrl: "templates/hours.html"
   };
 }).directive('businessHoursInput', function() {
   return {
@@ -30,7 +30,7 @@ angular.module("extendi.business-hours", ['pascalprecht.translate']).config([
       model: "="
     },
     controller: "BusinessHoursCtrl",
-    templateUrl: "src/partials/templates/hours_input.html"
+    templateUrl: "templates/hours_input.html"
   };
 }).controller("BusinessHoursCtrl", [
   "$scope", "$q", "$translate", "$locale", function($scope, $q, $translate, $locale) {

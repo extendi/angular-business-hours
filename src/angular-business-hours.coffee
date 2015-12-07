@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module("extendi.business-hours", ['pascalprecht.translate']).
+angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.business-hours.tpl']).
   config(['$translateProvider', ($translateProvider) ->
     $translateProvider.translations('en',
       "business-hours.weekdays": "Week days"
@@ -20,14 +20,14 @@ angular.module("extendi.business-hours", ['pascalprecht.translate']).
     scope:
       model: "="
     controller: "BusinessHoursCtrl"
-    templateUrl: "src/partials/templates/hours.html"
+    templateUrl: "templates/hours.html"
   ).
   directive('businessHoursInput', ->
     restrict: 'E'
     scope:
       model: "="
     controller: "BusinessHoursCtrl"
-    templateUrl: "src/partials/templates/hours_input.html"
+    templateUrl: "templates/hours_input.html"
   ).
   controller("BusinessHoursCtrl", [
     "$scope"
