@@ -20,14 +20,14 @@ angular.module("extendi.business-hours", ['pascalprecht.translate']).
     scope:
       model: "="
     controller: "BusinessHoursCtrl"
-    templateUrl: "src/hours.html"
+    templateUrl: "src/partials/templates/hours.html"
   ).
   directive('businessHoursInput', ->
     restrict: 'E'
     scope:
       model: "="
     controller: "BusinessHoursCtrl"
-    templateUrl: "partials/templates/hours_input"
+    templateUrl: "src/partials/templates/hours_input.html"
   ).
   controller("BusinessHoursCtrl", [
     "$scope"

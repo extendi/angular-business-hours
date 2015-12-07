@@ -21,7 +21,7 @@ angular.module("extendi.business-hours", ['pascalprecht.translate']).config([
       model: "="
     },
     controller: "BusinessHoursCtrl",
-    templateUrl: "partials/templates/hours"
+    templateUrl: "src/partials/templates/hours.html"
   };
 }).directive('businessHoursInput', function() {
   return {
@@ -30,7 +30,7 @@ angular.module("extendi.business-hours", ['pascalprecht.translate']).config([
       model: "="
     },
     controller: "BusinessHoursCtrl",
-    templateUrl: "partials/templates/hours_input"
+    templateUrl: "src/partials/templates/hours_input.html"
   };
 }).controller("BusinessHoursCtrl", [
   "$scope", "$q", "$translate", "$locale", function($scope, $q, $translate, $locale) {
