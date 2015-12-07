@@ -4,12 +4,16 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
     $translateProvider.translations('en', {
       "business-hours.weekdays": "Week days",
       "business-hours.weekend": "Weekend",
-      "business-hours.alldays": "All days"
+      "business-hours.alldays": "All days",
+      "business-hours.add_opening": "Add opening hour",
+      "business-hours.choose_day": "Choose a day"
     });
     $translateProvider.translations('it', {
       "business-hours.weekdays": "Giorni feriali",
       "business-hours.weekend": "Fine settimana",
-      "business-hours.alldays": "Tutti i giorni"
+      "business-hours.alldays": "Tutti i giorni",
+      "business-hours.add_opening": "Aggiungi orari di apertura",
+      "business-hours.choose_day": "Scegli un giorno"
     });
     $translateProvider.preferredLanguage('it');
     return $translateProvider.useSanitizeValueStrategy('escapeParameters');
@@ -83,7 +87,7 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
           return $scope.days_label[day].slice(0, 3);
         }).join(",");
       }
-      return "Scegli un giorno";
+      return "business-hours.choose_day";
     };
     $scope.add_hour = function() {
       var value;
