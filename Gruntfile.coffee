@@ -26,4 +26,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-angular-templates'
   
-  grunt.registerTask 'compile', ['coffee']
+  grunt.registerTask 'compile', ['coffee', 'ngtemplates']
