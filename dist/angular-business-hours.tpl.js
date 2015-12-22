@@ -22,7 +22,7 @@ angular.module('extendi.business-hours.tpl', []).run(['$templateCache', function
     "    </ul>\n" +
     "  </div>\n" +
     "  <input type=\"text\" size=\"5\" ng-model=\"hour.start\" placeholder=\"10:00\" ng-pattern=\"/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/\" typeahead=\"range_hour for range_hour in range_hours() | filter:$viewValue | limitTo:8\" class=\"text-center form-control\" required typeahead-on-select=\"choosen($item, $model, $label)\"> &mdash; \n" +
-    "  <input type=\"text\" size=\"5\" ng-model=\"hour.end\" placeholder=\"18:00\" ng-pattern=\"/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/\" typeahead=\"range_hour for range_hour in range_hours() | filter:$viewValue | limitTo:8\" class=\"text-center form-control\" required typeahead-on-select=\"choosen($item, $model, $label)\">\n" +
+    "  <input type=\"text\" size=\"5\" ng-model=\"hour.end\" greater-than=\"{{hour.start}}\" placeholder=\"18:00\" ng-pattern=\"/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/\" typeahead=\"range_hour for range_hour in range_hours() | filter:$viewValue | limitTo:8\" class=\"text-center form-control\" required typeahead-on-select=\"choosen($item, $model, $label)\">\n" +
     "</div>\n" +
     "<div class=\"push-top\"><a ng-click=\"add_hour()\"><i class=\"fa fa-plus-circle push-xsmall-right\"></i>{{'business-hours.add_opening' | translate}}</a></div>\n"
   );

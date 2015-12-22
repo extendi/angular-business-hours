@@ -33,6 +33,30 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
     controller: "BusinessHoursCtrl"
     templateUrl: "templates/hours_input.html"
   ).
+  directive('greaterThan', () ->
+    require: 'ngModel'
+    link: (scope, element, attrs, ctrl) ->
+    
+      validate = (viewValue) ->
+        comparisonModel = attrs.greaterThan
+
+        if !viewValue or !comparisonModel
+          ctrl.$setValidity('greaterThan', true)
+          return viewValue
+      
+        start = comparisonModel.split(":")
+        end = viewValue.split(":")
+      
+        ctrl.$setValidity('greaterThan', (parseInt(start[0], 10) < parseInt(end[0], 10)) or (parseInt(start[0], 10) == parseInt(end[0], 10) and parseInt(start[1], 10) < parseInt(end[1], 10)))
+        return viewValue
+      
+      ctrl.$parsers.unshift(validate)
+      ctrl.$formatters.push(validate)
+    
+      attrs.$observe('greaterThan', (comparisonModel) ->
+        return validate(ctrl.$viewValue)
+      )
+  ).
   controller("BusinessHoursCtrl", [
     "$scope"
     "$q"

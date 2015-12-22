@@ -36,6 +36,30 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
     controller: "BusinessHoursCtrl",
     templateUrl: "templates/hours_input.html"
   };
+}).directive('greaterThan', function() {
+  return {
+    require: 'ngModel',
+    link: function(scope, element, attrs, ctrl) {
+      var validate;
+      validate = function(viewValue) {
+        var comparisonModel, end, start;
+        comparisonModel = attrs.greaterThan;
+        if (!viewValue || !comparisonModel) {
+          ctrl.$setValidity('greaterThan', true);
+          return viewValue;
+        }
+        start = comparisonModel.split(":");
+        end = viewValue.split(":");
+        ctrl.$setValidity('greaterThan', (parseInt(start[0], 10) < parseInt(end[0], 10)) || (parseInt(start[0], 10) === parseInt(end[0], 10) && parseInt(start[1], 10) < parseInt(end[1], 10)));
+        return viewValue;
+      };
+      ctrl.$parsers.unshift(validate);
+      ctrl.$formatters.push(validate);
+      return attrs.$observe('greaterThan', function(comparisonModel) {
+        return validate(ctrl.$viewValue);
+      });
+    }
+  };
 }).controller("BusinessHoursCtrl", [
   "$scope", "$q", "$translate", "$locale", function($scope, $q, $translate, $locale) {
     var dom;
