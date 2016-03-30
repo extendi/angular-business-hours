@@ -77,7 +77,7 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
         _.flatten(
           _.map([0,15,30,45], (mins) ->
             _.map(hours, (hour) ->
-              "#{_.padLeft(hour, 2, '0')}:#{_.padLeft(mins, 2, '0')}"
+              "#{hour}:#{_.padLeft(mins, 2, '0')}"
             )
           )
         )
