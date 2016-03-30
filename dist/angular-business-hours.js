@@ -74,7 +74,7 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
       hours = _.range(0, 24);
       return _.flatten(_.map([0, 15, 30, 45], function(mins) {
         return _.map(hours, function(hour) {
-          return (_.padLeft(hour, 2, '0')) + ":" + (_.padLeft(mins, 2, '0'));
+          return hour + ":" + (_.padLeft(mins, 2, '0'));
         });
       }));
     };
