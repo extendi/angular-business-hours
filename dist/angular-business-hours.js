@@ -72,17 +72,22 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
     $scope.range_hours = function() {
       var hours;
       hours = _.range(0, 24);
-      return _.flatten(_.map([0, 15, 30, 45], function(mins) {
+      _.flatten(_.map([0, 15, 30, 45], function(mins) {
         return _.map(hours, function(hour) {
           return hour + ":" + (_.padLeft(mins, 2, '0'));
         });
       }));
+      return _.padLeft(mins, 2, '0');
     };
     $scope.hours_for = function(hours, day) {
       return _.sortBy(_.where(hours, {
         days: [day]
       }), function(item) {
-        return item.start;
+        if (item.start.length === 4) {
+          return "0" + item.start;
+        } else {
+          return item.start;
+        }
       });
     };
     $scope.toggle_day = function(hour, index) {

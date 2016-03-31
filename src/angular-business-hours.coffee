@@ -81,9 +81,14 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
             )
           )
         )
-        
+        _.padLeft(mins, 2, '0')
       $scope.hours_for = (hours, day) ->
-        _.sortBy(_.where(hours, {days: [day]}), (item) -> item.start)
+        _.sortBy(_.where(hours, {days: [day]}), (item) -> 
+          if item.start.length == 4
+            "0#{item.start}"
+          else
+            item.start
+        )
       
       $scope.toggle_day = (hour, index) ->
         if (i = _.indexOf(hour.days, $scope.days[index])) >= 0
