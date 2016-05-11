@@ -70,14 +70,13 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
     $scope.weekdays = [0, 1, 2, 3, 4];
     $scope.weekend = [5, 6];
     $scope.range_hours = function() {
-      var hours;
+      var hours, mins;
       hours = _.range(0, 24);
-      _.flatten(_.map([0, 15, 30, 45], function(mins) {
+      return mins = _.flatten(_.map([0, 15, 30, 45], function(mins) {
         return _.map(hours, function(hour) {
           return hour + ":" + (_.padLeft(mins, 2, '0'));
         });
       }));
-      return _.padLeft(mins, 2, '0');
     };
     $scope.hours_for = function(hours, day) {
       return _.sortBy(_.where(hours, {

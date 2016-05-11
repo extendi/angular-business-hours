@@ -74,14 +74,14 @@ angular.module("extendi.business-hours", ['pascalprecht.translate', 'extendi.bus
       
       $scope.range_hours = ->
         hours = _.range(0, 24)
-        _.flatten(
+        mins = _.flatten(
           _.map([0,15,30,45], (mins) ->
             _.map(hours, (hour) ->
               "#{hour}:#{_.padLeft(mins, 2, '0')}"
             )
           )
         )
-        _.padLeft(mins, 2, '0')
+      
       $scope.hours_for = (hours, day) ->
         _.sortBy(_.where(hours, {days: [day]}), (item) -> 
           if item.start.length == 4
